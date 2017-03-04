@@ -44,7 +44,11 @@ if __name__ == '__main__':
         # Process the state data
         if state_id != 'frames':
 
-            state.append(state_id)
+            # The SVG file has DC as DC1 - correct this
+            if state_id == 'DC1':
+                state.append('DC')
+            else:
+                state.append(state_id)
 
             x = []
             y = []
